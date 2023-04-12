@@ -65,7 +65,7 @@ class _OnBoardingState extends State<OnBoarding> {
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
-                                return HomePage();
+                                return LoginPage();
                               },
                             ));
                           },

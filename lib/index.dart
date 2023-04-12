@@ -1,48 +1,137 @@
 import 'package:flutter/material.dart';
-import 'package:lumo_app/widgets/image_list_view.dart';
 
-class IntroScreen extends StatelessWidget {
-  const IntroScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(204, 183, 9, 218),
-      body: TapImage(),
-    );
-  }
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class TapImage extends StatefulWidget {
-  const TapImage({super.key});
-
-  @override
-  State<TapImage> createState() => _TapImageState();
-}
-
-class _TapImageState extends State<TapImage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InkWell(
-        onTap: () {
-          Column(
+    return Scaffold(
+      backgroundColor: Colors.purple.shade200,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Ink.image(
-                image: const AssetImage('assets/warehousing-icon.png'),
-                height: 200,
-                width: 200,
+              const Icon(
+                Icons.login,
+                size: 64,
               ),
               const SizedBox(
-                height: 6,
-                child: Text(
-                  'Inventory Keeping',
-                  style: TextStyle(fontSize: 30, color: Colors.black12),
+                height: 25,
+              ),
+              //Hello Again
+              const Text(
+                'Hello Again',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                'Welcome back to LuMo.',
+                style: TextStyle(fontSize: 20),
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+              //Email Address
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.purple.shade100,
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: 'Email Address'),
+                    ),
+                  ),
                 ),
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              //Password
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.purple.shade100,
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: 'Password'),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+
+              //Sign In Button
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple.shade500,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Not a Member ? Register
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Not a member ?',
+                    style: TextStyle(fontWeight: FontWeight.w100),
+                  ),
+                  Text(
+                    'Register Now',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  )
+                ],
               )
             ],
-          );
-        },
+          ),
+        ),
       ),
     );
   }
