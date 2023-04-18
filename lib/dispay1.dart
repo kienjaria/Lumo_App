@@ -56,7 +56,7 @@ class _HomeIconsState extends State<HomeIcons> {
               ),
             ),
             const SizedBox(
-              height: 24,
+              height: 12,
             ),
 
             //tabs

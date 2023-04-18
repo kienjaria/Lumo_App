@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int index = 0;
 
-  final screens = [
+  final screens = const [
     HomeIcons(),
     AccountSettings(),
     StoreDetails(),
@@ -25,9 +25,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      Icon(Icons.home),
-      Icon(Icons.person),
-      Icon(Icons.settings),
+      const Icon(Icons.home),
+      const Icon(Icons.person),
+      const Icon(Icons.settings),
     ];
     return Scaffold(
         backgroundColor: Colors.purple.shade200,
